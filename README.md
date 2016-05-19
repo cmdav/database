@@ -27,3 +27,9 @@ select * from member;
 
 --To view all sessions and their respective teachers
 select teacher_name,session_name from teachers a INNER JOIN member_registered_events b ON a.teacher_id=b.teacher_id INNER JOIN sessions c.session_id=b.session_id;
+
+--To view the most recent payment
+select amount_paid,max(date_of_payment) from payments ;
+
+-- To view the amounts paid according to days
+select amount_paid,date_of_payment from payments group by date_of_payment order by date_of_payment descending;
