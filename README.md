@@ -33,3 +33,6 @@ select amount_paid,max(date_of_payment) from payments ;
 
 -- To view the amounts paid according to days
 select amount_paid,date_of_payment from payments group by date_of_payment order by date_of_payment descending;
+
+--To view all payment details that have been completed
+select * from payments where paid_in_full='Y';
